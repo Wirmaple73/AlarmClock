@@ -1,0 +1,83 @@
+﻿<Window x:Class="AlarmClock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="زنگ هشدار" TextOptions.TextFormattingMode="Display" SizeToContent="Width" FontFamily="Tahoma" Background="WhiteSmoke" Height="450" ResizeMode="CanMinimize" Icon="icon_alarmclock.ico">
+    <Grid FlowDirection="RightToLeft">
+        <Menu Height="25" VerticalAlignment="Top" Width="517" HorizontalAlignment="Right">
+            <MenuItem Header="فایل">
+                <MenuItem Header="خروج" Click="Menu_Exit_Click" ToolTip="خروج از برنامه">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/icon_exit.png" Width="22" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="زنگ هشدار">
+                <MenuItem Header="تغییر صدای زنگ">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/icon_bell.png" Width="22"/>
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="MenuItem_SetDefaultSoundLocation" Header="صدای پیش‌فرض" Click="Button_SetDefaultSoundLocation_Click" IsChecked="True" ToolTip="استفاده از صدای زنگ پیش‌فرض"/>
+                    <MenuItem x:Name="MenuItem_ChangeSoundLocation" Header="انتخاب فایل صدا..." Click="Button_ChangeSoundLocation_Click" ToolTip="انتخاب فایل صوتی سفارشی برای صدای زنگ"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="هشدار جدید" Click="Button_Alarm_New_Click" ToolTip="ایجاد هشدار جدید">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/icon_addalarm.png" Width="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="حذف هشدار" Click="Button_Alarm_Delete_Click" ToolTip="حذف هشدار انتخاب شده">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/icon_deletealarm.png" Width="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="تغییر وضعیت" Click="Button_Alarm_ToggleStatus_Click" ToolTip="فعال/غیرفعال سازی هشدار انتخاب شده">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/icon_swapstatus.png" Width="22" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="راهنما">
+                <MenuItem Header="درباره" Click="Menu_Help_About_Click" ToolTip="نمایش اطلاعات برنامه">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/icon_help.png" Width="23" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <ListView x:Name="ListView_ScheduleList" Margin="0,72,10,10" Width="497" FontWeight="Bold" SelectionMode="Single" HorizontalAlignment="Right" KeyDown="ListView_ScheduleList_KeyDown">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView FrameworkElement.FlowDirection="RightToLeft">
+                    <!-- <GridViewColumn Header="#" DisplayMemberBinding="{Binding ID}" Width="20"/> -->
+                    <GridViewColumn Header=" وضعیت" DisplayMemberBinding="{Binding Status}" Width="90"/>
+                    <GridViewColumn Header=" روز" DisplayMemberBinding="{Binding Day}" Width="80"/>
+                    <GridViewColumn Header=" زمان" DisplayMemberBinding="{Binding Time}" Width="100"/>
+                    <GridViewColumn Header=" عنوان" DisplayMemberBinding="{Binding Title}" Width="210"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="105" Height="28" FontSize="13" Click="Button_Alarm_New_Click" ToolTip="ایجاد هشدار جدید">
+            <StackPanel>
+                <Image Source="Resources/icon_addalarm.png" Width="19" Margin="0,-1,76,0" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <TextBlock Text="هشدار جدید" Margin="25,-19,0,0"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="128,36,0,0" VerticalAlignment="Top" Width="105" Height="28" FontSize="13" Click="Button_Alarm_Delete_Click" ToolTip="حذف هشدار انتخاب شده">
+            <StackPanel>
+                <Image Source="Resources/icon_deletealarm.png" Width="19" Margin="0,0,76,0" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <TextBlock Text="حذف هشدار" Margin="25,-19,0,0"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="246,36,0,0" VerticalAlignment="Top" Width="105" Height="28" FontSize="13" Click="Button_Alarm_ToggleStatus_Click" ToolTip="فعال/غیرفعال سازی هشدار انتخاب شده">
+            <StackPanel>
+                <Image Source="Resources/icon_swapstatus.png" Width="21" Margin="0,0,80,-1" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <TextBlock Text="تغییر وضعیت" Margin="25,-20,0,0"></TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>
