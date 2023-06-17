@@ -165,6 +165,7 @@ namespace AlarmClock
 
             ListView_ScheduleList.Items.Clear();
 
+            // Parse the file
             foreach (string line in lineArray)
             {
                 // Skip the current line if it's empty or a comment
@@ -301,7 +302,7 @@ namespace AlarmClock
         {
             timer = new DispatcherTimer();
 
-            timer.Interval = new TimeSpan(0, 0, 0, 1);  // Delay: 1s
+            timer.Interval = new TimeSpan(0, 0, 0, 1);  // Interval: 1s
             timer.Tick += timer_Tick;
         }
 
