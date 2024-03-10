@@ -1,5 +1,5 @@
 # In the name of God
-<p><a href="https://github.com/Wirmaple73/AlarmClock/blob/main/README.md">Persian readme</a></p>
+<p><a href="https://github.com/Wirmaple73/AlarmClock/blob/main/README_fa-IR.md">Persian readme</a></p>
 
 ## Alarm Clock
 Are you in need of a lightweight, portable alarm clock that swiftly gets the job done? You are in the right place, Alarm Clock is just the right tool for you!
