@@ -17,6 +17,6 @@ Alarm Clock is not able to wake the system up at the moment. This feature is to 
 <img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/8d8e8c25-8c33-42f6-b304-3304c497bb24" width="45%"></img> 
 
 ## Download link
-You can download the latest release [here](https://github.com/Wirmaple73/EscapeTheMaze/releases/latest). Enjoy!
+You can download the latest release [here](https://github.com/Wirmaple73/AlarmClock/releases/latest). Enjoy!
 
 Special thanks to www.iconpacks.net and www.hiclipart.com for their wonderful icons.
