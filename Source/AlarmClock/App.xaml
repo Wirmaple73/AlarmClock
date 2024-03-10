@@ -1,0 +1,26 @@
+﻿<Application x:Class="AlarmClock.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AlarmClock"
+             StartupUri="Files/Windows/MainWindow.xaml">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Resources/Languages/English.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<Style TargetType="Button">
+				<Setter Property="Padding" Value="32,3,32,3"/>
+			</Style>
+
+			<!-- Enforce left-to-right direction for checkboxes (https://stackoverflow.com/a/36025392/18954775) -->
+			<Style x:Key="LeftToRightCheckBox" TargetType="{x:Type CheckBox}">
+				<Style.Resources>
+					<Style TargetType="{x:Type Path}">
+						<Setter Property="FlowDirection" Value="LeftToRight"/>
+					</Style>
+				</Style.Resources>
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

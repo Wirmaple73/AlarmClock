@@ -1,0 +1,151 @@
+﻿<Window x:Class="AlarmClock.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:AlarmClock"
+		xmlns:managers="clr-namespace:AlarmClock.Managers"
+		xmlns:converters="clr-namespace:AlarmClock.Converters"
+		mc:Ignorable="d"
+		Title="{DynamicResource Global_ProgramTitle}" Width="900" Height="620" MinWidth="250" MinHeight="160" Closing="Window_Closing" ResizeMode="CanResizeWithGrip" TextOptions.TextFormattingMode="Display" Loaded="Window_Loaded">
+	<Window.Resources>
+		<converters:StatusConverter x:Key="StatusConverter"/>
+		<converters:DaysToRepeatConverter x:Key="DaysToRepeatConverter"/>
+		
+		<Style TargetType="Image">
+			<Setter Property="Width" Value="23"/>
+			<Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+		</Style>
+		
+		<Style TargetType="ToolBar">
+			<Setter Property="Background" Value="White"/>
+		</Style>
+
+		<Style TargetType="ToolBarTray">
+			<Setter Property="Background" Value="White"/>
+		</Style>
+	</Window.Resources>
+
+	<Window.CommandBindings>
+		<CommandBinding Command="ApplicationCommands.New" Executed="AddAlarm_Executed"/>
+		<CommandBinding Command="ApplicationCommands.Properties" Executed="ModifyAlarm_Executed"/>
+		<CommandBinding Command="local:CustomCommands.SwapAlarmStatus" Executed="SwapAlarmStatus_Executed"/>
+		<CommandBinding Command="ApplicationCommands.Delete" Executed="DeleteAlarm_Executed"/>
+		<CommandBinding Command="ApplicationCommands.Help" Executed="DisplayAboutWindow_Executed"/>
+	</Window.CommandBindings>
+
+	<Grid FlowDirection="{Binding Path=(managers:LanguageManager.FlowDirection)}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20"/>
+			<RowDefinition Height="40"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<DockPanel>
+			<Menu Grid.Row="0">
+				<MenuItem Header="{DynamicResource MW_MenuFile}">
+					<MenuItem Header="{DynamicResource MW_MenuExit}" Click="Exit_Click" InputGestureText="Alt+F4" Width="150">
+						<MenuItem.Icon>
+							<Image Source="/Resources/Images/Exit.png"/>
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuItem>
+				
+				<MenuItem Header="{DynamicResource MW_MenuAlarm}">
+					<MenuItem Header="{DynamicResource MW_MenuAddAlarm}" Width="230" Command="ApplicationCommands.New">
+						<MenuItem.Icon>
+							<Image Source="/Resources/Images/AddAlarm.png"/>
+						</MenuItem.Icon>
+					</MenuItem>
+
+					<MenuItem Header="{DynamicResource MW_MenuSwapAlarmStatus}" Width="230" Command="local:CustomCommands.SwapAlarmStatus">
+						<MenuItem.Icon>
+							<Image Source="/Resources/Images/SwapAlarmStatus.png"/>
+						</MenuItem.Icon>
+					</MenuItem>
+
+					<MenuItem Header="{DynamicResource MW_MenuModifyAlarm}" Width="230" Command="ApplicationCommands.Properties">
+						<MenuItem.Icon>
+							<Image Source="/Resources/Images/ModifyAlarm.png"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					
+					<MenuItem Header="{DynamicResource MW_MenuDeleteAlarm}" Width="230" Command="ApplicationCommands.Delete">
+						<MenuItem.Icon>
+							<Image Source="/Resources/Images/DeleteAlarm.png"/>
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuItem>
+
+				<MenuItem Header="{DynamicResource MW_MenuOptions}">
+					<MenuItem Header="{DynamicResource MW_MenuSelectLanguage}">
+						<MenuItem.Icon>
+							<Image Source="/Resources/Images/SelectLanguage.png"/>
+						</MenuItem.Icon>
+						
+						<MenuItem x:Name="EnglishItem" Tag="English" Header="En_glish" IsCheckable="True" Click="SelectLanguage_Click"/>
+						<MenuItem x:Name="PersianItem" Tag="Persian" Header="فار_سی" IsCheckable="True" Click="SelectLanguage_Click"/>
+					</MenuItem>
+
+					<Separator/>
+					<MenuItem x:Name="StartWithWindows" Header="{DynamicResource MW_StartWithWindows}" IsCheckable="True" Click="StartWithWindows_Click"/>
+					<MenuItem x:Name="AutoCheckForUpdates" Header="{DynamicResource MW_MenuAutoCheckForUpdates}" IsCheckable="True"/>
+				</MenuItem>
+
+				<MenuItem Header="{DynamicResource MW_MenuHelp}">
+					<MenuItem Header="{DynamicResource MW_MenuCheckForUpdates}" Width="200" Click="CheckForUpdates_Click">
+						<MenuItem.Icon>
+							<Image Source="/Resources/Images/CheckForUpdates.png"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					
+					<MenuItem Header="{DynamicResource MW_MenuAbout}" Command="ApplicationCommands.Help" Width="200">
+						<MenuItem.Icon>
+							<Image Source="/Resources/Images/Help.png"/>
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuItem>
+			</Menu>
+		</DockPanel>
+
+		<DockPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="1">
+			<ToolBarTray ToolBar.OverflowMode="Never" ToolBarTray.IsLocked="True">
+				<ToolBar Loaded="AlarmToolBar_Loaded">
+					<Button Command="ApplicationCommands.New" Margin="0,0,2,0" ToolTip="{DynamicResource MW_ToolBarAddAlarm}">
+						<Image Source="/Resources/Images/AddAlarm.png"/>
+					</Button>
+
+					<Button Command="local:CustomCommands.SwapAlarmStatus" Margin="0,0,2,0" ToolTip="{DynamicResource MW_ToolBarSwapAlarmStatus}">
+						<Image Source="/Resources/Images/SwapAlarmStatus.png"/>
+					</Button>
+
+					<Button Command="ApplicationCommands.Properties" Margin="0,0,2,0" ToolTip="{DynamicResource MW_ToolBarModifyAlarm}">
+						<Image Source="/Resources/Images/ModifyAlarm.png"/>
+					</Button>
+
+					<Button Command="ApplicationCommands.Delete" ToolTip="{DynamicResource MW_ToolBarDeleteAlarm}">
+						<Image Source="/Resources/Images/DeleteAlarm.png"/>
+					</Button>
+				</ToolBar>
+			</ToolBarTray>
+		</DockPanel>
+
+		<ListView x:Name="AlarmList" Grid.Row="2" Margin="10,0,10,10" SelectionMode="Single">
+			<ListView.Resources>
+				<Style TargetType="{x:Type GridViewColumnHeader}">
+					<Setter Property="HorizontalContentAlignment" Value="Left"/>
+					<Setter Property="Padding" Value="5,3,0,3"/>
+				</Style>
+			</ListView.Resources>
+
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Width="80" Header="{DynamicResource MW_ListViewStatus}" DisplayMemberBinding="{Binding IsEnabled, Converter={StaticResource StatusConverter}}"/>
+					<GridViewColumn Width="200" Header="{DynamicResource MW_ListViewDaysToRepeat}" DisplayMemberBinding="{Binding DaysToRepeat, Converter={StaticResource DaysToRepeatConverter}}"/>
+					<GridViewColumn Width="100" Header="{DynamicResource MW_ListViewTime}" DisplayMemberBinding="{Binding Time}"/>
+					<GridViewColumn Width="380" Header="{DynamicResource MW_ListViewDescription}" DisplayMemberBinding="{Binding Description}"/>
+				</GridView>
+			</ListView.View>
+		</ListView>
+	</Grid>
+</Window>

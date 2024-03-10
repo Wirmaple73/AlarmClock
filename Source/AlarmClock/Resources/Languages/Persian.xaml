@@ -1,0 +1,104 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:system="clr-namespace:System;assembly=mscorlib">
+	<!-- کلّی -->
+	<system:String x:Key="Global_ProgramTitle">زنگ هشدار</system:String>
+
+	<system:String x:Key="Global_OK">_تأیید</system:String>
+	<system:String x:Key="Global_Cancel">_لغو</system:String>
+	<system:String x:Key="Global_Error">خطا</system:String>
+
+	<system:String x:Key="Global_English">انگلیسی</system:String>
+	<system:String x:Key="Global_Persian">فارسی</system:String>
+
+	<!-- پنجرۀ اصلی -->
+	<system:String x:Key="MW_ExitConfirmation">آیا می‌خواهید از برنامه خارج شوید؟ برنامه باید برای شناسایی و فعّال کردن زنگ‌های هشدار در حال اجرا باشد!</system:String>
+	
+	<system:String x:Key="MW_UpToDate">شما در حال اجرای آخرین نسخۀ برنامه می‌باشید.</system:String>
+	<system:String x:Key="MW_UpdateAvailable">یک به‌روزرسانی جدید یافت شد! آیا مایل به باز کردن صفحۀ به‌روزرسانی برنامه در مرورگر خود می‌باشید؟</system:String>
+	<system:String x:Key="MW_ConnectionError">خطایی در هنگام بررسی به‌روزرسانی‌ها رخ داد. لطفاً اتصال خود به اینترنت را بررسی کنید و دوباره امتحان نمائید.</system:String>
+
+	<system:String x:Key="MW_RegistryError">خطایی هنگام اعمال این عملیات رخ داد. لطفاً مطمئن شوید که برنامه، دسترسی نوشتن به رجیستری ویندوز را دارد.</system:String>
+	
+	<system:String x:Key="MW_ListViewStatus">وضعیت</system:String>
+	<system:String x:Key="MW_ListViewDescription">توضیحات</system:String>
+	<system:String x:Key="MW_ListViewDaysToRepeat">روزهای تکرار</system:String>
+	<system:String x:Key="MW_ListViewTime">زمان</system:String>
+
+	<system:String x:Key="MW_ListViewStatusEnabled">فعّال</system:String>
+	<system:String x:Key="MW_ListViewStatusDisabled">غیرفعّال</system:String>
+
+	<system:String x:Key="MW_MenuFile">_فایل</system:String>
+	<system:String x:Key="MW_MenuAlarm">_زنگ هشدار</system:String>
+	<system:String x:Key="MW_MenuOptions">_تنظیمات</system:String>
+	<system:String x:Key="MW_MenuHelp">_راهنما</system:String>
+
+	<system:String x:Key="MW_MenuExit">_خروج</system:String>
+
+	<system:String x:Key="MW_MenuAddAlarm">_افزودن هشدار جدید...</system:String>
+	<system:String x:Key="MW_MenuSwapAlarmStatus">تغییر _وضعیت هشدار</system:String>
+	<system:String x:Key="MW_MenuModifyAlarm">اصلاح _هشدار...</system:String>
+	<system:String x:Key="MW_MenuDeleteAlarm">_حذف هشدار</system:String>
+
+	<system:String x:Key="MW_ToolBarAddAlarm">افزودن هشدار جدید...</system:String>
+	<system:String x:Key="MW_ToolBarSwapAlarmStatus">تغییر وضعیت هشدار</system:String>
+	<system:String x:Key="MW_ToolBarModifyAlarm">اصلاح هشدار...</system:String>
+	<system:String x:Key="MW_ToolBarDeleteAlarm">حذف هشدار</system:String>
+
+	<system:String x:Key="MW_MenuSelectLanguage">ز_بان</system:String>
+	<system:String x:Key="MW_MenuAutoCheckForUpdates">بررس_ی خودکار به‌روزرسانی‌ها</system:String>
+	<system:String x:Key="MW_StartWithWindows">ا_جرا با ویندوز</system:String>
+	
+	<system:String x:Key="MW_MenuCheckForUpdates">به‌روزر_سانی برنامه</system:String>
+	<system:String x:Key="MW_MenuAbout">_درباره</system:String>
+
+	<!-- پنجرۀ تنظیمات هشدار -->
+	<system:String x:Key="ASW_AlarmNotSelected">لطفاً ابتدا یک زنگ هشدار را انتخاب کنید.</system:String>
+	<system:String x:Key="ASW_AudioFileNotFound">فایل صوتی مورد نظر یافت نشد.</system:String>
+	<system:String x:Key="ASW_AudioFileInvalid">فایل صوتی مورد نظر نامعتبر می‌باشد.</system:String>
+
+	<system:String x:Key="ASW_NewAlarm">هشدار جدید</system:String>
+	<system:String x:Key="ASW_ModifyAlarm">اصلاح هشدار</system:String>
+
+	<system:String x:Key="ASW_AlarmSettings">تنظیمات هشدار</system:String>
+
+	<system:String x:Key="ASW_AlarmInitialStatus">_وضعیت آغازین:</system:String>
+	<system:String x:Key="ASW_AlarmDaysToRepeat">_روزهای تکرار:</system:String>
+	<system:String x:Key="ASW_AlarmTime">_زمان:</system:String>
+	<system:String x:Key="ASW_AlarmDescription">_توضیحات:</system:String>
+
+	<system:String x:Key="ASW_SelectDaysToRepeat">انتخاب روزهای تکرار</system:String>
+
+	<system:String x:Key="ASW_AlarmEnabled">_فعّال</system:String>
+
+	<system:String x:Key="ASW_Saturday">شنبه</system:String>
+	<system:String x:Key="ASW_Sunday">یک‌شنبه</system:String>
+	<system:String x:Key="ASW_Monday">دوشنبه</system:String>
+	<system:String x:Key="ASW_Tuesday">سه‌شنبه</system:String>
+	<system:String x:Key="ASW_Wednesday">چهارشنبه</system:String>
+	<system:String x:Key="ASW_Thursday">پنج‌شنبه</system:String>
+	<system:String x:Key="ASW_Friday">جمعه</system:String>
+	<system:String x:Key="ASW_Once">یک‌بار</system:String>
+
+	<system:String x:Key="ASW_TimeFormat">در {0} ساعت و {1} دقیقه</system:String>
+	<system:String x:Key="ASW_TimeNow">اکنون</system:String>
+	
+	<system:String x:Key="ASW_SoundLocation">_صدای زنگ:</system:String>
+	<system:String x:Key="ASW_UseCustomSoundLocation">_استفاده از صدای زنگ سفارشی</system:String>
+	<system:String x:Key="ASW_SoundLocationDefault">پیش‌فرض</system:String>
+	<system:String x:Key="ASW_Browse">ا_نتخاب فایل صوتی...</system:String>
+	<system:String x:Key="ASW_Preview">_پیش‌نمایش</system:String>
+	<system:String x:Key="ASW_SelectedAudioFilePath">مسیر فایل صوتی انتخابی:</system:String>
+
+	<system:String x:Key="ASW_SoundNotSelected">لطفاً ابتدا یک فایل صوتی را انتخاب کنید.</system:String>
+
+	<system:String x:Key="ASW_OpenFileDialogTitle">انتخاب فایل صوتی</system:String>
+	<system:String x:Key="ASW_OpenFileDialogFilter">فایل‌های WAV (*.wav)|*.wav</system:String>
+
+	<!-- پنجرۀ هشدار -->
+	<system:String x:Key="AW_Description">توضیحات زنگ هشدار:</system:String>
+
+	<!-- پنجرۀ درباره -->
+	<system:String x:Key="ABW_WindowTitle">درباره</system:String>
+	<system:String x:Key="ABW_AuthorName">علیرضا شهیدی فرد</system:String>
+</ResourceDictionary>

@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\Images\Icon.ico</ApplicationIcon>
+    <Title>Alarm Clock</Title>
+    <Authors>Alireza Shahidi Fard</Authors>
+    <Version>1.0.0</Version>
+    <Company>Alireza Shahidi Fard</Company>
+    <Product>Alarm Clock</Product>
+    <Description>Alarm Clock</Description>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Audio\DefaultAlarm.wav" />
+    <None Remove="Resources\Images\AddAlarm.png" />
+    <None Remove="Resources\Images\CheckForUpdates.png" />
+    <None Remove="Resources\Images\DeleteAlarm.png" />
+    <None Remove="Resources\Images\Exit.png" />
+    <None Remove="Resources\Images\Help.png" />
+    <None Remove="Resources\Images\icon.ico" />
+    <None Remove="Resources\Images\ModifyAlarm.png" />
+    <None Remove="Resources\Images\SelectAlarmSound.png" />
+    <None Remove="Resources\Images\SelectLanguage.png" />
+    <None Remove="Resources\Images\SwapAlarmStatus.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\CheckForUpdates.png" />
+    <Resource Include="Resources\Images\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Audio\DefaultAlarm.wav" />
+    <EmbeddedResource Include="Resources\Images\Icon.ico" />
+    <Resource Include="Resources\Images\AddAlarm.png" />
+    <Resource Include="Resources\Images\SelectLanguage.png" />
+    <Resource Include="Resources\Images\DeleteAlarm.png" />
+    <Resource Include="Resources\Images\Exit.png" />
+    <Resource Include="Resources\Images\Help.png" />
+    <Resource Include="Resources\Images\ModifyAlarm.png" />
+    <Resource Include="Resources\Images\SwapAlarmStatus.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

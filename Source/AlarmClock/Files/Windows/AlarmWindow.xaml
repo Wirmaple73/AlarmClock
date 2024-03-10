@@ -1,0 +1,21 @@
+﻿<Window x:Class="AlarmClock.AlarmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlarmClock"
+		xmlns:managers="clr-namespace:AlarmClock.Managers"
+		xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="{DynamicResource Global_ProgramTitle}" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Topmost="True" Closed="Window_Closed">
+	<StackPanel FlowDirection="{Binding Path=(managers:LanguageManager.FlowDirection)}" Orientation="Vertical" Margin="15,0,15,0" Width="240" Height="280" TextOptions.TextFormattingMode="Display">
+		<TextBlock Text="{Binding Source={x:Static system:DateTime.Now}, StringFormat=HH:mm}" HorizontalAlignment="Center" FontSize="30" Padding="0,10,0,10"/>
+
+		<TextBlock Text="{DynamicResource AW_Description}" Padding="0,5,0,5"/>
+		<TextBox Text="{Binding Alarm.Description, Mode=OneTime, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:AlarmWindow}}}" IsReadOnly="True" IsReadOnlyCaretVisible="True" Height="140" VerticalScrollBarVisibility="Visible"/>
+
+		<DockPanel HorizontalAlignment="Left" Margin="0,15,0,0">
+			<Button Content="{DynamicResource Global_OK}" IsDefault="True" IsCancel="True"/>
+		</DockPanel>
+	</StackPanel>
+</Window>

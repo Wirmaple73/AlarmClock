@@ -1,0 +1,104 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:system="clr-namespace:System;assembly=mscorlib">
+	<!-- Global -->
+	<system:String x:Key="Global_ProgramTitle">Alarm Clock</system:String>
+	
+	<system:String x:Key="Global_OK">_OK</system:String>
+	<system:String x:Key="Global_Cancel">_Cancel</system:String>
+	<system:String x:Key="Global_Error">Error</system:String>
+	
+	<system:String x:Key="Global_English">English</system:String>
+	<system:String x:Key="Global_Persian">Persian</system:String>
+
+	<!-- Main window -->
+	<system:String x:Key="MW_ExitConfirmation">Are you sure you want to exit the program? The program must be kept running in order to detect and trigger alarms!</system:String>
+	
+	<system:String x:Key="MW_UpToDate">You are currently running the latest version of the program.</system:String>
+	<system:String x:Key="MW_UpdateAvailable">There is a new update available! Would you like to open the repository URL in your browser now?</system:String>
+	<system:String x:Key="MW_ConnectionError">An error occurred while attempting to check for updates. Please ensure that you are properly connected to the internet and try again later.</system:String>
+
+	<system:String x:Key="MW_RegistryError">An error occurred while attempting to apply this setting. Please ensure that the program has write access to the Registry.</system:String>
+	
+	<system:String x:Key="MW_ListViewStatus">Status</system:String>
+	<system:String x:Key="MW_ListViewDescription">Description</system:String>
+	<system:String x:Key="MW_ListViewDaysToRepeat">Days to repeat</system:String>
+	<system:String x:Key="MW_ListViewTime">Time</system:String>
+
+	<system:String x:Key="MW_ListViewStatusEnabled">Enabled</system:String>
+	<system:String x:Key="MW_ListViewStatusDisabled">Disabled</system:String>
+
+	<system:String x:Key="MW_MenuFile">_File</system:String>
+	<system:String x:Key="MW_MenuAlarm">_Alarm</system:String>
+	<system:String x:Key="MW_MenuOptions">_Options</system:String>
+	<system:String x:Key="MW_MenuHelp">_Help</system:String>
+
+	<system:String x:Key="MW_MenuExit">_Exit</system:String>
+
+	<system:String x:Key="MW_MenuAddAlarm">Add _new alarm...</system:String>
+	<system:String x:Key="MW_MenuSwapAlarmStatus">S_wap alarm status</system:String>
+	<system:String x:Key="MW_MenuModifyAlarm">_Modify alarm...</system:String>
+	<system:String x:Key="MW_MenuDeleteAlarm">_Delete alarm</system:String>
+
+	<system:String x:Key="MW_ToolBarAddAlarm">Add new alarm...</system:String>
+	<system:String x:Key="MW_ToolBarSwapAlarmStatus">Swap alarm status</system:String>
+	<system:String x:Key="MW_ToolBarModifyAlarm">Modify alarm...</system:String>
+	<system:String x:Key="MW_ToolBarDeleteAlarm">Delete alarm</system:String>
+
+	<system:String x:Key="MW_MenuSelectLanguage">_Language</system:String>
+	<system:String x:Key="MW_MenuAutoCheckForUpdates">Automatically check for _updates</system:String>
+	<system:String x:Key="MW_StartWithWindows">_Start with windows</system:String>
+	
+	<system:String x:Key="MW_MenuCheckForUpdates">_Check for updates</system:String>
+	<system:String x:Key="MW_MenuAbout">A_bout</system:String>
+
+	<!-- Alarm settings window -->
+	<system:String x:Key="ASW_AlarmNotSelected">Please select an alarm first.</system:String>
+	<system:String x:Key="ASW_AudioFileNotFound">The specified audio file could not be found.</system:String>
+	<system:String x:Key="ASW_AudioFileInvalid">The specified audio file is invalid.</system:String>
+
+	<system:String x:Key="ASW_NewAlarm">New alarm</system:String>
+	<system:String x:Key="ASW_ModifyAlarm">Modify alarm</system:String>
+
+	<system:String x:Key="ASW_AlarmSettings">Alarm settings</system:String>
+
+	<system:String x:Key="ASW_AlarmInitialStatus">_Initial status:</system:String>
+	<system:String x:Key="ASW_AlarmDaysToRepeat">_Days to repeat:</system:String>
+	<system:String x:Key="ASW_AlarmTime">_Time:</system:String>
+	<system:String x:Key="ASW_AlarmDescription">D_escription:</system:String>
+
+	<system:String x:Key="ASW_SelectDaysToRepeat">Select days to repeat</system:String>
+
+	<system:String x:Key="ASW_AlarmEnabled">E_nabled</system:String>
+
+	<system:String x:Key="ASW_Saturday">Saturday</system:String>
+	<system:String x:Key="ASW_Sunday">Sunday</system:String>
+	<system:String x:Key="ASW_Monday">Monday</system:String>
+	<system:String x:Key="ASW_Tuesday">Tuesday</system:String>
+	<system:String x:Key="ASW_Wednesday">Wednesday</system:String>
+	<system:String x:Key="ASW_Thursday">Thursday</system:String>
+	<system:String x:Key="ASW_Friday">Friday</system:String>
+	<system:String x:Key="ASW_Once">Once</system:String>
+
+	<system:String x:Key="ASW_TimeFormat">In {0} hour(s) and {1} minute(s)</system:String>
+	<system:String x:Key="ASW_TimeNow">Now</system:String>
+
+	<system:String x:Key="ASW_SoundLocation">_Sound location:</system:String>
+	<system:String x:Key="ASW_UseCustomSoundLocation">_Use custom sound location</system:String>
+	<system:String x:Key="ASW_SoundLocationDefault">Default</system:String>
+	<system:String x:Key="ASW_Browse">_Browse...</system:String>
+	<system:String x:Key="ASW_Preview">_Preview</system:String>
+	<system:String x:Key="ASW_SelectedAudioFilePath">Selected audio file path:</system:String>
+
+	<system:String x:Key="ASW_SoundNotSelected">Please select an audio file first.</system:String>
+
+	<system:String x:Key="ASW_OpenFileDialogTitle">Select alarm sound</system:String>
+	<system:String x:Key="ASW_OpenFileDialogFilter">.wav files (*.wav)|*.wav</system:String>
+
+	<!-- Alarm window -->
+	<system:String x:Key="AW_Description">Alarm description:</system:String>
+	
+	<!-- About window -->
+	<system:String x:Key="ABW_WindowTitle">About</system:String>
+	<system:String x:Key="ABW_AuthorName">Alireza Shahidi Fard</system:String>
+</ResourceDictionary>
