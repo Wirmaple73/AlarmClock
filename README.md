@@ -1,6 +1,6 @@
 # In the name of God
 ## Alarm Clock
-Are you in need of a lightweight, portable alarm clock that gets the job done? You are in the right place, Alarm Clock has got your back!
+Are you in need of a lightweight, portable alarm clock that gets the job done? You are in the right place, Alarm Clock is just the right tool for the job!
 
 ## Features
 * Lightweight and easy to use.
