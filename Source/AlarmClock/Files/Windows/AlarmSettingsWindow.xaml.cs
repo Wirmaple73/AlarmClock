@@ -35,7 +35,7 @@ namespace AlarmClock
 
 				void ApplyAlarmModificationMode()
 				{
-					StartEnabled.IsChecked	 = Alarm.IsEnabled;
+					// StartEnabled.IsChecked	 = Alarm.IsEnabled;  // Always enable the alarm regardless of its original state
 					DaysToRepeat			 = Alarm.DaysToRepeat;
 					TimeHour.SelectedIndex	 = Alarm.Time.Hours;
 					TimeMinute.SelectedIndex = Alarm.Time.Minutes;
@@ -54,8 +54,6 @@ namespace AlarmClock
 					{
 						SelectedAlarmSound = Alarm.SoundLocation.AlarmSound;
 					}
-
-					// Time_SelectionChanged(this, null);
 				}
 			}
 		}
