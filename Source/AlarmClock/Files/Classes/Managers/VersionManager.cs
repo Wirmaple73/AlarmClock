@@ -6,8 +6,8 @@ namespace AlarmClock.Managers
 {
 	public static class VersionManager
 	{
-		public static readonly Version CurrentVersion = new(1, 0, 0);
-		public static readonly DateTime BuildDate = new(2024, 3, 10);
+		public static readonly Version CurrentVersion = new(1, 1, 0);
+		public static readonly DateTime BuildDate = new(2024, 4, 11);
 
 		public const string RepositoryURL = "https://www.github.com/Wirmaple73/AlarmClock";
 		private const string LookupURL = "https://raw.githubusercontent.com/Wirmaple73/AlarmClock/main/CurrentVersion.txt";
