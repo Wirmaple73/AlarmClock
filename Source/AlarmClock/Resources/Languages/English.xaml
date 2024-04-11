@@ -53,11 +53,9 @@
 	<system:String x:Key="MW_MenuAbout">A_bout</system:String>
 
 	<!-- Alarm settings window -->
-	<system:String x:Key="ASW_AlarmNotSelected">Please select an alarm first.</system:String>
-	<system:String x:Key="ASW_AudioFileNotFound">The specified audio file could not be found.</system:String>
-	<system:String x:Key="ASW_AudioFileInvalid">The specified audio file is invalid.</system:String>
+    <system:String x:Key="ASW_AlarmNotSelected">Please select an alarm first.</system:String>
 
-	<system:String x:Key="ASW_NewAlarm">New alarm</system:String>
+    <system:String x:Key="ASW_NewAlarm">New alarm</system:String>
 	<system:String x:Key="ASW_ModifyAlarm">Modify alarm</system:String>
 
 	<system:String x:Key="ASW_AlarmSettings">Alarm settings</system:String>
@@ -80,13 +78,11 @@
 	<system:String x:Key="ASW_Friday">Friday</system:String>
 	<system:String x:Key="ASW_Once">Once</system:String>
 
-	<system:String x:Key="ASW_TimeFormat">In {0} hour(s) and {1} minute(s)</system:String>
+    <system:String x:Key="ASW_TimeFormat">in {0} hour(s) and {1} minute(s)</system:String>
 	<system:String x:Key="ASW_TimeNow">Now</system:String>
 
-	<system:String x:Key="ASW_SoundLocation">_Sound location:</system:String>
-	<system:String x:Key="ASW_UseCustomSoundLocation">_Use custom sound location</system:String>
-	<system:String x:Key="ASW_SoundLocationDefault">Default</system:String>
-	<system:String x:Key="ASW_Browse">_Browse...</system:String>
+    <system:String x:Key="ASW_SoundLocation">_Sound location:</system:String>
+    <system:String x:Key="ASW_Browse">_Browse...</system:String>
 	<system:String x:Key="ASW_Preview">_Preview</system:String>
 	<system:String x:Key="ASW_SelectedAudioFilePath">Selected audio file path:</system:String>
     <system:String x:Key="ASW_SelectedAudioFileVolume">Volume:</system:String>

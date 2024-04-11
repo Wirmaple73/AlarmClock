@@ -53,11 +53,9 @@
 	<system:String x:Key="MW_MenuAbout">_درباره</system:String>
 
 	<!-- پنجرۀ تنظیمات هشدار -->
-	<system:String x:Key="ASW_AlarmNotSelected">لطفاً ابتدا یک زنگ هشدار را انتخاب کنید.</system:String>
-	<system:String x:Key="ASW_AudioFileNotFound">فایل صوتی مورد نظر یافت نشد.</system:String>
-	<system:String x:Key="ASW_AudioFileInvalid">فایل صوتی مورد نظر نامعتبر می‌باشد.</system:String>
+    <system:String x:Key="ASW_AlarmNotSelected">لطفاً ابتدا یک زنگ هشدار را انتخاب کنید.</system:String>
 
-	<system:String x:Key="ASW_NewAlarm">هشدار جدید</system:String>
+    <system:String x:Key="ASW_NewAlarm">هشدار جدید</system:String>
 	<system:String x:Key="ASW_ModifyAlarm">اصلاح هشدار</system:String>
 
 	<system:String x:Key="ASW_AlarmSettings">تنظیمات هشدار</system:String>
@@ -82,11 +80,9 @@
 
 	<system:String x:Key="ASW_TimeFormat">در {0} ساعت و {1} دقیقه</system:String>
 	<system:String x:Key="ASW_TimeNow">اکنون</system:String>
-	
-	<system:String x:Key="ASW_SoundLocation">_صدای زنگ:</system:String>
-	<system:String x:Key="ASW_UseCustomSoundLocation">_استفاده از صدای زنگ سفارشی</system:String>
-	<system:String x:Key="ASW_SoundLocationDefault">پیش‌فرض</system:String>
-	<system:String x:Key="ASW_Browse">ا_نتخاب فایل صوتی...</system:String>
+
+    <system:String x:Key="ASW_SoundLocation">_صدای زنگ:</system:String>
+    <system:String x:Key="ASW_Browse">ا_نتخاب فایل صوتی...</system:String>
 	<system:String x:Key="ASW_Preview">_پیش‌نمایش</system:String>
 	<system:String x:Key="ASW_SelectedAudioFilePath">مسیر فایل صوتی انتخابی:</system:String>
     <system:String x:Key="ASW_SelectedAudioFileVolume">بلندی:</system:String>
