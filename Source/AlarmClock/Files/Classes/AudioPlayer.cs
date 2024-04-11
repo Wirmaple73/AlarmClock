@@ -1,31 +1,45 @@
-﻿using System.Media;
+﻿using System;
+using System.Windows.Media;
 
 namespace AlarmClock
 {
 	public static class AudioPlayer
-    {
-        private static readonly SoundPlayer player = new();
+	{
+		private static readonly MediaPlayer player = new();
 
-        public static void Play(SoundLocation soundLocation, bool loop = false)
-        {
-            using (player)
-            {
-                if (soundLocation.IsFilePathDefined)
-                    player.SoundLocation = soundLocation.FilePath;
-                else
-                    player.Stream = soundLocation.AlarmSoundStream;
+		private static bool isLooped;
 
-                if (loop)
-                    player.PlayLooping();
-                else
-                    player.Play();
-            }
-        }
+		static AudioPlayer() => player.MediaEnded += Player_MediaEnded;
 
-        public static void Stop()
-        {
-            using (player)
-                player.Stop();
-        }
-    }
+		// AudioPlayer can currently play only one sound simultaneously
+		public static void Play(string soundPath, double volume = 100, bool isLooped = false)
+		{
+			if (volume < 0 || volume > 100)
+				throw new ArgumentOutOfRangeException(nameof(volume), "Volume must be between 0 and 100, inclusive.");
+
+			player.Volume = volume / 100;  // Transfer the volume range from [0, 100] to [0, 1]
+
+			player.Open(new Uri(soundPath, UriKind.Absolute));
+			player.Play();
+
+			AudioPlayer.isLooped = isLooped;
+		}
+
+		public static void Stop()
+		{
+			player.Stop();
+			player.Close();
+		}
+
+		private static void Player_MediaEnded(object sender, EventArgs e)
+		{
+			// Code for looping taken from: https://stackoverflow.com/a/24320649/18954775
+
+			if (isLooped)
+			{
+				player.Position = TimeSpan.Zero;
+				player.Play();
+			}
+		}
+	}
 }

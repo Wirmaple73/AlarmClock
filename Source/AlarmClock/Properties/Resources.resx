@@ -124,9 +124,6 @@
   <data name="SelectLanguage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\SelectLanguage.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="DefaultAlarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Audio\DefaultAlarm.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="DeleteAlarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\DeleteAlarm.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

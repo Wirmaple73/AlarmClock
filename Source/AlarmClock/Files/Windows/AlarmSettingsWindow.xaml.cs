@@ -10,12 +10,14 @@ namespace AlarmClock
 {
 	public partial class AlarmSettingsWindow : Window
 	{
+		private static readonly string DefaultSoundFilePath = Path.Combine(Environment.CurrentDirectory, @"Resources\Audio\Alarms\Default.wav");
 		private static readonly TimeSpan DayDuration = new(24, 0, 0);
 
 		private readonly OpenFileDialog fileDialog = new()
 		{
 			Title  = ResourceManager.GetResource(Resource.ASW_OpenFileDialogTitle),
 			Filter = ResourceManager.GetResource(Resource.ASW_OpenFileDialogFilter),
+			InitialDirectory = Path.GetDirectoryName(DefaultSoundFilePath),
 			CheckFileExists = true
 		};
 
@@ -41,19 +43,8 @@ namespace AlarmClock
 					TimeMinute.SelectedIndex = Alarm.Time.Minutes;
 					Description.Text		 = Alarm.Description;
 
-					if (Alarm.SoundLocation.IsFilePathDefined)
-					{
-						fileDialog.FileName	= Alarm.SoundLocation.FilePath;
-						SelectedAudioFilePath.Text = fileDialog.FileName;
-
-						UseCustomSoundLocation.IsChecked = true;
-						SelectSoundLocation.IsEnabled = false;
-						BrowseSoundLocation.IsEnabled = true;
-					}
-					else
-					{
-						SelectedAlarmSound = Alarm.SoundLocation.AlarmSound;
-					}
+					fileDialog.FileName = SelectedAudioFilePath.Text = Alarm.SoundPath;
+					Volume.Value = Alarm.Volume;
 				}
 			}
 		}
@@ -85,21 +76,6 @@ namespace AlarmClock
 			}
 		}
 
-		private AlarmSound SelectedAlarmSound
-		{
-			get => SelectSoundLocation.SelectedIndex switch
-			{
-				0 => AlarmSound.DefaultAlarm,
-				_ => throw new InvalidOperationException()
-			};
-
-			set => SelectSoundLocation.SelectedIndex = value switch
-			{
-				AlarmSound.DefaultAlarm => 0,
-				_ => throw new ArgumentOutOfRangeException(nameof(value), "The specified alarm sound could not be resolved.")
-			};
-		}
-
 		public AlarmSettingsWindow()
 		{
 			InitializeComponent();
@@ -114,6 +90,8 @@ namespace AlarmClock
 
 				TimeHour.SelectedIndex	 = DateTime.Now.Hour;
 				TimeMinute.SelectedIndex = DateTime.Now.Minute;
+
+				fileDialog.FileName = SelectedAudioFilePath.Text = DefaultSoundFilePath;
 
 				IEnumerable<string> GetTimeValues(int maxValue)
 				{
@@ -141,23 +119,15 @@ namespace AlarmClock
 			var currentTime  = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, 0);
 			var selectedTime = new TimeSpan(TimeHour.SelectedIndex, TimeMinute.SelectedIndex, 0);
 
-			var timeDifference = selectedTime - currentTime;
+			var deltaTime = selectedTime - currentTime;
 
 			// If the user has selected an earlier time, count the remaining time value toward tommorow
 			if (selectedTime < currentTime)
-				timeDifference += DayDuration;
+				deltaTime += DayDuration;
 
-			TimeLeft.Text = timeDifference != TimeSpan.Zero
-				? ResourceManager.GetResourceFormatted(Resource.ASW_TimeFormat, timeDifference.Hours, timeDifference.Minutes)
+			TimeLeft.Text = deltaTime != TimeSpan.Zero
+				? ResourceManager.GetResourceFormatted(Resource.ASW_TimeFormat, deltaTime.Hours, deltaTime.Minutes)
 				: ResourceManager.GetResource(Resource.ASW_TimeNow);
-		}
-
-		private void UseCustomSoundLocation_Click(object sender, RoutedEventArgs e)
-		{
-			SelectSoundLocation.IsEnabled = !UseCustomSoundLocation.IsChecked.Value;
-			BrowseSoundLocation.IsEnabled = UseCustomSoundLocation.IsChecked.Value;
-
-			SelectedAudioFilePath.Text = UseCustomSoundLocation.IsChecked.Value ? fileDialog.FileName : "";
 		}
 
 		private void BrowseSoundLocation_Click(object sender, RoutedEventArgs e)
@@ -168,35 +138,15 @@ namespace AlarmClock
 
 		private void Preview_Click(object sender, RoutedEventArgs e)
 		{
-			if (!UseCustomSoundLocation.IsChecked.Value)
-			{
-				AudioPlayer.Play(new(SelectedAlarmSound));
-				return;
-			}
-
-			if (fileDialog.FileName.Length == 0)
-			{
+			if (fileDialog.FileName.Length > 0)
+				AudioPlayer.Play(fileDialog.FileName, Volume.Value);
+			else
 				MessageBoxManager.DisplayInformation(ResourceManager.GetResource(Resource.ASW_SoundNotSelected));
-				return;
-			}
-
-			try
-			{
-				AudioPlayer.Play(new(fileDialog.FileName));
-			}
-			catch (FileNotFoundException)
-			{
-				MessageBoxManager.DisplayError(ResourceManager.GetResource(Resource.ASW_AudioFileNotFound));
-			}
-			catch (InvalidOperationException)
-			{
-				MessageBoxManager.DisplayError(ResourceManager.GetResource(Resource.ASW_AudioFileInvalid));
-			}
 		}
 
 		private void OK_Click(object sender, RoutedEventArgs e)
 		{
-			if (UseCustomSoundLocation.IsChecked.Value && fileDialog.FileName.Length == 0)
+			if (fileDialog.FileName.Length == 0)
 			{
 				MessageBoxManager.DisplayInformation(ResourceManager.GetResource(Resource.ASW_SoundNotSelected));
 				return;
@@ -208,7 +158,8 @@ namespace AlarmClock
 				DaysToRepeat  = DaysToRepeat,
 				Time		  = new(TimeHour.SelectedIndex, TimeMinute.SelectedIndex, 0),
 				Description   = Description.Text.Length > 0 ? Description.Text : "~",
-				SoundLocation = UseCustomSoundLocation.IsChecked.Value ? new(fileDialog.FileName) : new(SelectedAlarmSound)
+				SoundPath	  = new(fileDialog.FileName),
+				Volume		  = Volume.Value
 			};
 
 			this.DialogResult = true;

@@ -13,15 +13,7 @@ namespace AlarmClock
 			init
 			{
 				alarm = value;
-
-				try
-				{
-					AudioPlayer.Play(alarm.SoundLocation, true);
-				}
-				catch
-				{
-					AudioPlayer.Play(SoundLocation.Default, true);
-				}
+				AudioPlayer.Play(alarm.SoundPath, alarm.Volume, true);
 			}
 		}
 

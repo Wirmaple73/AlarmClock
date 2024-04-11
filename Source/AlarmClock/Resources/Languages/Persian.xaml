@@ -89,6 +89,7 @@
 	<system:String x:Key="ASW_Browse">ا_نتخاب فایل صوتی...</system:String>
 	<system:String x:Key="ASW_Preview">_پیش‌نمایش</system:String>
 	<system:String x:Key="ASW_SelectedAudioFilePath">مسیر فایل صوتی انتخابی:</system:String>
+    <system:String x:Key="ASW_SelectedAudioFileVolume">بلندی:</system:String>
 
 	<system:String x:Key="ASW_SoundNotSelected">لطفاً ابتدا یک فایل صوتی را انتخاب کنید.</system:String>
 

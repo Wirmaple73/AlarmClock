@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlarmClock
 {
-    public enum AlarmSound
+    public enum AlarmSource
     {
         DefaultAlarm
     }

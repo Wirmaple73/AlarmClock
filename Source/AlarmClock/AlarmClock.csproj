@@ -47,7 +47,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Audio\DefaultAlarm.wav" />
+    <Content Include="Resources\Audio\Alarms\Default.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Resources\Images\Icon.ico" />
     <Resource Include="Resources\Images\AddAlarm.png" />
     <Resource Include="Resources\Images\SelectLanguage.png" />
