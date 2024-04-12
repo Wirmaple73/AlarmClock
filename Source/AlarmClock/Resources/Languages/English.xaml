@@ -90,7 +90,7 @@
 	<system:String x:Key="ASW_SoundNotSelected">Please select an audio file first.</system:String>
 
 	<system:String x:Key="ASW_OpenFileDialogTitle">Select alarm sound</system:String>
-	<system:String x:Key="ASW_OpenFileDialogFilter">.wav files (*.wav)|*.wav</system:String>
+    <system:String x:Key="ASW_OpenFileDialogFilter">.wav files (*.wav)|*.wav|.mp3 files (*.mp3)|*.mp3|.wma files (*.wma)|*.wma|.aac files (*.aac)|*.aac</system:String>
 
 	<!-- Alarm window -->
 	<system:String x:Key="AW_Description">Alarm description:</system:String>

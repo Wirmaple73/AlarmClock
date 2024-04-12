@@ -82,7 +82,7 @@
 	<system:String x:Key="ASW_TimeNow">اکنون</system:String>
 
     <system:String x:Key="ASW_SoundLocation">_صدای زنگ:</system:String>
-    <system:String x:Key="ASW_Browse">ا_نتخاب فایل صوتی...</system:String>
+    <system:String x:Key="ASW_Browse">ا_نتخاب فایل...</system:String>
 	<system:String x:Key="ASW_Preview">_پیش‌نمایش</system:String>
 	<system:String x:Key="ASW_SelectedAudioFilePath">مسیر فایل صوتی انتخابی:</system:String>
     <system:String x:Key="ASW_SelectedAudioFileVolume">بلندی:</system:String>
@@ -90,7 +90,7 @@
 	<system:String x:Key="ASW_SoundNotSelected">لطفاً ابتدا یک فایل صوتی را انتخاب کنید.</system:String>
 
 	<system:String x:Key="ASW_OpenFileDialogTitle">انتخاب فایل صوتی</system:String>
-	<system:String x:Key="ASW_OpenFileDialogFilter">فایل‌های WAV (*.wav)|*.wav</system:String>
+    <system:String x:Key="ASW_OpenFileDialogFilter">.wav فایل‌های (*.wav)|*.wav|.mp3 فایل‌های (*.mp3)|*.mp3|.wma فایل‌های (*.wma)|*.wma|.aac فایل‌های (*.aac)|*.aac</system:String>
 
 	<!-- پنجرۀ هشدار -->
 	<system:String x:Key="AW_Description">توضیحات زنگ هشدار:</system:String>
