@@ -94,8 +94,10 @@
                         <TextBlock Text="{DynamicResource ASW_SelectedAudioFileVolume}" Padding="0,10,0,3"/>
                         <StackPanel Orientation="Horizontal">
                             <Slider x:Name="Volume" Width="200" HorizontalAlignment="Left" Maximum="100" SmallChange="5" LargeChange="10" TickFrequency="5" TickPlacement="BottomRight" Value="100" IsSnapToTickEnabled="True"/>
-                            <TextBlock Text="{Binding ElementName=Volume, Path=Value}" Padding="10,0,0,0"/>
-                            <TextBlock Text="%"/>
+                            <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Margin="10,0,0,0">
+                                <TextBlock Text="{Binding ElementName=Volume, Path=Value}"/>
+                                <TextBlock Text="%"/>
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
