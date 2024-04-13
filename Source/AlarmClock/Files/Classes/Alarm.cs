@@ -4,6 +4,8 @@ namespace AlarmClock
 {
 	public class Alarm
 	{
+		private double volume;
+
 		public bool IsEnabled { get; set; }
 
 		public DaysToRepeat DaysToRepeat { get; set; }
@@ -12,7 +14,12 @@ namespace AlarmClock
 		public string Description { get; set; }
 
 		public string SoundPath { get; set; }
-		public double Volume { get; set; }
+
+		public double Volume
+		{
+			get => volume;
+			set => volume = (value >= 0 && value <= 100) ? value : throw new ArgumentOutOfRangeException(nameof(value), "Volume must be between 0 and 100, inclusive.");
+		}
 
 		public Alarm() { }
 
@@ -23,7 +30,7 @@ namespace AlarmClock
 			Time		  = time;
 			Description   = description;
 			SoundPath	  = soundPath;
-			Volume		  = volume >= 0 && volume <= 100 ? volume : throw new ArgumentOutOfRangeException(nameof(volume), "Volume must be between 0 and 100, inclusive.");
+			Volume		  = volume;
 		}
 
 		public bool HasToBeSoundedToday

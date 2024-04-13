@@ -138,10 +138,13 @@ namespace AlarmClock
 
 		private void Preview_Click(object sender, RoutedEventArgs e)
 		{
-			if (fileDialog.FileName.Length > 0)
-				AudioPlayer.Play(fileDialog.FileName, Volume.Value);
-			else
+			if (fileDialog.FileName.Length == 0)
+			{
 				MessageBoxManager.DisplayInformation(ResourceManager.GetResource(Resource.ASW_SoundNotSelected));
+				return;
+			}
+
+			AudioPlayer.Play(fileDialog.FileName, Volume.Value);
 		}
 
 		private void OK_Click(object sender, RoutedEventArgs e)

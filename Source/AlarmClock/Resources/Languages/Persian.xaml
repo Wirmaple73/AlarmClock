@@ -54,7 +54,7 @@
 
 	<!-- پنجرۀ تنظیمات هشدار -->
     <system:String x:Key="ASW_AlarmNotSelected">لطفاً ابتدا یک زنگ هشدار را انتخاب کنید.</system:String>
-
+    
     <system:String x:Key="ASW_NewAlarm">هشدار جدید</system:String>
 	<system:String x:Key="ASW_ModifyAlarm">اصلاح هشدار</system:String>
 
@@ -88,8 +88,9 @@
     <system:String x:Key="ASW_SelectedAudioFileVolume">بلندی:</system:String>
 
 	<system:String x:Key="ASW_SoundNotSelected">لطفاً ابتدا یک فایل صوتی را انتخاب کنید.</system:String>
-
-	<system:String x:Key="ASW_OpenFileDialogTitle">انتخاب فایل صوتی</system:String>
+    <!-- <system:String x:Key="ASW_SoundFileCorrupt">فایل صوتی انتخابی ظاهراً ناقص است. لطفاً فایل دیگری را انتخاب کنید.</system:String> -->
+    
+    <system:String x:Key="ASW_OpenFileDialogTitle">انتخاب فایل صوتی</system:String>
     <system:String x:Key="ASW_OpenFileDialogFilter">.wav فایل‌های (*.wav)|*.wav|.mp3 فایل‌های (*.mp3)|*.mp3|.wma فایل‌های (*.wma)|*.wma|.aac فایل‌های (*.aac)|*.aac</system:String>
 
 	<!-- پنجرۀ هشدار -->

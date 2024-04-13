@@ -87,9 +87,10 @@
 	<system:String x:Key="ASW_SelectedAudioFilePath">Selected audio file path:</system:String>
     <system:String x:Key="ASW_SelectedAudioFileVolume">Volume:</system:String>
 
-	<system:String x:Key="ASW_SoundNotSelected">Please select an audio file first.</system:String>
+    <system:String x:Key="ASW_SoundNotSelected">Please select an audio file first.</system:String>
+    <!-- <system:String x:Key="ASW_SoundFileCorrupt">The selected audio file appears to be corrupted. Please choose another file.</system:String> -->
 
-	<system:String x:Key="ASW_OpenFileDialogTitle">Select alarm sound</system:String>
+    <system:String x:Key="ASW_OpenFileDialogTitle">Select alarm sound</system:String>
     <system:String x:Key="ASW_OpenFileDialogFilter">.wav files (*.wav)|*.wav|.mp3 files (*.mp3)|*.mp3|.wma files (*.wma)|*.wma|.aac files (*.aac)|*.aac</system:String>
 
 	<!-- Alarm window -->
