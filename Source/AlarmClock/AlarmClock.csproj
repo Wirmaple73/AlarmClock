@@ -36,8 +36,10 @@
     <None Remove="Resources\Images\Help.png" />
     <None Remove="Resources\Images\icon.ico" />
     <None Remove="Resources\Images\ModifyAlarm.png" />
+    <None Remove="Resources\Images\Play.png" />
     <None Remove="Resources\Images\SelectAlarmSound.png" />
     <None Remove="Resources\Images\SelectLanguage.png" />
+    <None Remove="Resources\Images\Stop.png" />
     <None Remove="Resources\Images\SwapAlarmStatus.png" />
   </ItemGroup>
 
@@ -52,11 +54,13 @@
     </Content>
     <EmbeddedResource Include="Resources\Images\Icon.ico" />
     <Resource Include="Resources\Images\AddAlarm.png" />
+    <Resource Include="Resources\Images\Play.png" />
     <Resource Include="Resources\Images\SelectLanguage.png" />
     <Resource Include="Resources\Images\DeleteAlarm.png" />
     <Resource Include="Resources\Images\Exit.png" />
     <Resource Include="Resources\Images\Help.png" />
     <Resource Include="Resources\Images\ModifyAlarm.png" />
+    <Resource Include="Resources\Images\Stop.png" />
     <Resource Include="Resources\Images\SwapAlarmStatus.png" />
   </ItemGroup>
 

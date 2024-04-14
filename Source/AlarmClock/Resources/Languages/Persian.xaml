@@ -83,9 +83,8 @@
 
     <system:String x:Key="ASW_SoundLocation">_صدای زنگ:</system:String>
     <system:String x:Key="ASW_Browse">ا_نتخاب فایل...</system:String>
-	<system:String x:Key="ASW_Preview">_پیش‌نمایش</system:String>
-	<system:String x:Key="ASW_SelectedAudioFilePath">مسیر فایل صوتی انتخابی:</system:String>
-    <system:String x:Key="ASW_SelectedAudioFileVolume">بلندی:</system:String>
+    <system:String x:Key="ASW_SelectedAudioFilePath">مسیر فایل صوتی انتخابی:</system:String>
+    <system:String x:Key="ASW_SelectedAudioFileVolume">سطح بلندی:</system:String>
 
 	<system:String x:Key="ASW_SoundNotSelected">لطفاً ابتدا یک فایل صوتی را انتخاب کنید.</system:String>
     <!-- <system:String x:Key="ASW_SoundFileCorrupt">فایل صوتی انتخابی ظاهراً ناقص است. لطفاً فایل دیگری را انتخاب کنید.</system:String> -->

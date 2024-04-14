@@ -79,19 +79,27 @@
 				</StackPanel>
 
 				<Label Content="{DynamicResource ASW_SoundLocation}" Grid.Row="4" Target="{Binding ElementName=UseCustomSoundLocation}" VerticalAlignment="Top" Height="25"/>
+                
                 <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Margin="0,5,5,0">
                     <StackPanel HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
 							<Button x:Name="BrowseSoundLocation" Content="{DynamicResource ASW_Browse}" HorizontalAlignment="Left" Margin="0,0,10,0" Click="BrowseSoundLocation_Click"/>
-							<Button Content="{DynamicResource ASW_Preview}" Width="80" Height="24" Padding="10,3" Click="Preview_Click"/>
-						</StackPanel>
+                            
+                            <Button Width="26" Height="24" Padding="0,-1" Click="Preview_Click">
+                                <Image Source="/Resources/Images/Play.png" RenderOptions.BitmapScalingMode="HighQuality"/>
+                            </Button>
+
+                            <Button Width="26" Height="24" Padding="0,-1" Click="Stop_Click" Margin="5,0,0,0">
+                                <Image Source="/Resources/Images/Stop.png" RenderOptions.BitmapScalingMode="HighQuality"/>
+                            </Button>
+                        </StackPanel>
 					</StackPanel>
 
                     <StackPanel Orientation="Vertical" Margin="0,15,0,0">
                         <TextBlock Text="{DynamicResource ASW_SelectedAudioFilePath}" Padding="0,0,0,3"/>
                         <TextBox x:Name="SelectedAudioFilePath" IsReadOnly="True" IsReadOnlyCaretVisible="True" Height="19"/>
 
-                        <TextBlock Text="{DynamicResource ASW_SelectedAudioFileVolume}" Padding="0,10,0,3"/>
+                        <TextBlock Text="{DynamicResource ASW_SelectedAudioFileVolume}" Padding="0,15,0,3"/>
                         <StackPanel Orientation="Horizontal">
                             <Slider x:Name="Volume" Width="200" HorizontalAlignment="Left" Maximum="100" SmallChange="5" LargeChange="10" TickFrequency="5" TickPlacement="BottomRight" Value="100" IsSnapToTickEnabled="True"/>
                             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Margin="10,0,0,0">

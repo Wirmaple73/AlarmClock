@@ -83,8 +83,7 @@
 
     <system:String x:Key="ASW_SoundLocation">_Sound location:</system:String>
     <system:String x:Key="ASW_Browse">_Browse...</system:String>
-	<system:String x:Key="ASW_Preview">_Preview</system:String>
-	<system:String x:Key="ASW_SelectedAudioFilePath">Selected audio file path:</system:String>
+    <system:String x:Key="ASW_SelectedAudioFilePath">Selected audio file path:</system:String>
     <system:String x:Key="ASW_SelectedAudioFileVolume">Volume:</system:String>
 
     <system:String x:Key="ASW_SoundNotSelected">Please select an audio file first.</system:String>
