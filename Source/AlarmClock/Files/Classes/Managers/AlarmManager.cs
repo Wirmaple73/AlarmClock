@@ -95,7 +95,13 @@ namespace AlarmClock.Managers
 				if (!File.Exists(FilePath))
 					return;
 
-				var document = XElement.Load(FilePath);
+				XElement document;
+
+				try
+				{
+					document = XElement.Load(FilePath);
+				}
+				catch { return; }
 
 				foreach (var element in document.Elements())
 				{
