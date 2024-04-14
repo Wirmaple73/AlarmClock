@@ -10,7 +10,7 @@ namespace AlarmClock.Managers
 		public static readonly DateTime BuildDate = new(2024, 4, 14);
 
 		public const string RepositoryURL = "https://www.github.com/Wirmaple73/AlarmClock";
-		private const string LookupURL = "https://raw.githubusercontent.com/Wirmaple73/AlarmClock/main/CurrentVersion.txt";
+		private const string LookupURL = "https://raw.githubusercontent.com/Wirmaple73/AlarmClock/master/CurrentVersion.txt";
 
 		private static readonly HttpClient client = new();
 
