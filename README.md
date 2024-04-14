@@ -15,8 +15,8 @@ Are you in need of a lightweight, portable alarm clock that swiftly gets the job
 Alarm Clock is not able to wake the system up at the moment. This feature is to be implemented in a future release.
 
 ## Images
-<img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/6eaebc92-0891-4798-a2ba-f4b744830070" width="45%"></img> 
-<img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/8d8e8c25-8c33-42f6-b304-3304c497bb24" width="45%"></img> 
+<img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/aad075e0-5354-4384-bf61-2eac5f42555c" width="45%"></img> 
+<img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/32fccf93-4b73-4739-87f2-5ed3a7e3cb9b" width="45%"></img> 
 
 ## Download link
 You can download the latest release [here](https://github.com/Wirmaple73/AlarmClock/releases/latest). Enjoy!
