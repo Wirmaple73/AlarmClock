@@ -13,9 +13,10 @@
 زنگ هشدار در حال حاضر قابل به بیدار کردن رایانه از خواب نمی‌باشد. این ویژگی در یک نسخۀ آینده پیاده‌سازی خواهد شد.
 
 ## تصاویر
+
 <p dir="rtl">
-<img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/0d4c6e99-b055-452c-a674-27f18af79e03" width="45%"></img> 
-<img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/878cdddf-f764-4a27-aa79-97a17cb5d0c0" width="45%"></img>
+	<img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/ee519a98-31af-4e3f-a406-813bac288ce2" width="45%"></img> 
+	<img src="https://github.com/Wirmaple73/AlarmClock/assets/71328992/4ba48470-3551-4f7f-ae3b-fce89d4f98b1" width="45%"></img>
 </p>
 
 ## لینک دانلود
